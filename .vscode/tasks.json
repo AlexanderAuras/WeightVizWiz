@@ -1,0 +1,20 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Start QT-Designer",
+            "type": "shell",
+            "options": { 
+                "cwd": "${workspaceFolder}", 
+                "env": {
+                    "LD_PRELOAD": "${command:python.interpreterPath}/../lib/libpython3.11.so",
+                    "PYSIDE_DESIGNER_PLUGINS": "${workspaceFolder}/wvw"
+                },
+            },
+            "command": "pyside6-designer",
+            // The above command my not find the environent variables sometimes, then use the following:
+            //"command": "${command:python.interpreterPath} -c \"import os; from PySide6.scripts.pyside_tool import designer; os.environ['LD_PRELOAD'] = '/home/alexander/anaconda3/envs/FNO-UNet/lib/libpython3.11.so'; os.environ['PYSIDE_DESIGNER_PLUGINS'] = '${workspaceFolder}/wvw'; designer()\"",
+            "problemMatcher": [],
+        }
+    ]
+}

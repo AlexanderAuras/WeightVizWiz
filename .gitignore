@@ -1,5 +1,6 @@
 /poetry.lock
 
 /.ruff_cache/
+/resources/*_ui.py
 
 __pycache__/
